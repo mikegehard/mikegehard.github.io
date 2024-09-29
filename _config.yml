@@ -1,7 +1,7 @@
 # Site
-title: My Blog
+title: AI Assisted Agile Software Development
 author: Mike Gehard
-description: A simple blog using Hexo
+description: Where I can post my musings on my journey in software development accompanied by an AI pair programming partner.
 language: en
 timezone: America/New_York
 theme: icarus
