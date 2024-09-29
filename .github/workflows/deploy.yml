@@ -1,0 +1,35 @@
+name: Deploy Hexo to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Change this to your default branch if it's not 'main'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'  # Specify the Node.js version you want to use
+
+      - name: Install dependencies
+        run: |
+          npm install
+          npm install hexo-cli -g
+
+      - name: Generate static files
+        run: hexo generate
+
+      - name: Deploy to GitHub Pages
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "mike.gehard@gmail.com"  # Replace with your email
+          git add public
+          git commit -m "Deploy to GitHub Pages" || echo "No changes to commit"
+          git push --force "https://${{ secrets.GITHUB_TOKEN }}@github.com/mike.gehard/mikegehard.github.com.git" main:gh-pages
