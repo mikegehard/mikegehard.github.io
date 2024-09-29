@@ -33,6 +33,10 @@ jobs:
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "mike.gehard@gmail.com"  # Replace with your email
-          git add -f public
+          # Remove all files from the gh-pages branch
+          git rm -rf . || echo "No files to remove"
+          # Copy the contents of the public directory to the root
+          cp -R public/* .  # Copy all files from public to the root
+          git add -f .  # Add all files in the root
           git commit -m "Deploy to GitHub Pages" || echo "No changes to commit"
-          git push --force "https://${{ secrets.GITHUB_TOKEN }}@github.com/mikegehard/mikegehard.github.io.git" main:gh-pages
+          git push --force "https://${{ secrets.GITHUB_TOKEN }}@github.com/mikegehard/mikegehard.github.io.git" HEAD:gh-pages
