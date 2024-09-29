@@ -6,7 +6,7 @@ tags:
   - workflow
 ---
 
-# AI as a Source of Information: Empowering Developers to Focus on Problem-Solving
+# Empowering Developers to Focus on Problem-Solving
 
 In the fast-paced world of software development, professionals rely on an ever-expanding toolkit to bring their ideas to life. From integrated development environments (IDEs) to version control systems to cloud platforms, each tool serves a crucial purpose in the development process. However, mastering these tools comes with a significant cognitive load.
 
