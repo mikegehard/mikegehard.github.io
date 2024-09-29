@@ -30,6 +30,6 @@ jobs:
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "mike.gehard@gmail.com"  # Replace with your email
-          git add public
+          git add -f public
           git commit -m "Deploy to GitHub Pages" || echo "No changes to commit"
           git push --force "https://${{ secrets.GITHUB_TOKEN }}@github.com/mike.gehard/mikegehard.github.com.git" main:gh-pages
