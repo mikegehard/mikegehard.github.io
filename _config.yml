@@ -28,10 +28,3 @@ external_link:
   enable: true
   field: site
   exclude: ''
-
-# Deployment
-deploy:
-  type: git
-  repo: https://github.com/mikegehard/mikegehard.github.io.git
-  branch: gh-pages
-  message: "Site updated: {{ now('YYYY-MM-DD HH:mm:ss') }}"
